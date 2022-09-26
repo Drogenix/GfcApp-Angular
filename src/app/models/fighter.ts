@@ -8,15 +8,21 @@ export interface Fighter
 
   name:string;
 
+  secondName:string;
+
   nickname:string;
 
   weight:string;
 
-  position: number;
+  rating: number;
+
+  pfprating: number;
 
   statisticId: number;
 
   pictureUrl: string;
+
+  profilePictureUrl: string;
 
   win: number;
 

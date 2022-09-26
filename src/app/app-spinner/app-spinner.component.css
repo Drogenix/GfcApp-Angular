@@ -1,0 +1,61 @@
+.loader{
+  display: block;
+  position: relative;
+  left: 4px;
+  height: 20px;
+  z-index: 201;
+  background-image:
+    linear-gradient(#FFF 20px, transparent 0),
+    linear-gradient(#FFF 20px, transparent 0),
+    linear-gradient(#FFF 20px, transparent 0),
+    linear-gradient(#FFF 20px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: 0 0, 20px 0, 40px 0, 60px 0;
+  width: 80px;
+  animation: pgfill 4s linear infinite;
+}
+@keyframes pgfill {
+  0% {   background-image: linear-gradient(black 20px, transparent 0), linear-gradient(black 20px, transparent 0), linear-gradient(black 20px, transparent 0), linear-gradient(#be0000 20px, transparent 0); }
+  25% {   background-image: linear-gradient(#be0000 20px, transparent 0), linear-gradient(black 20px, transparent 0), linear-gradient(black 20px, transparent 0), linear-gradient(black 20px, transparent 0); }
+  50% {   background-image: linear-gradient(black 20px, transparent 0), linear-gradient(#be0000 20px, transparent 0), linear-gradient(black 20px, transparent 0), linear-gradient(black 20px, transparent 0); }
+  75% {   background-image: linear-gradient(black 20px, transparent 0), linear-gradient(black 20px, transparent 0), linear-gradient(#be0000 20px, transparent 0), linear-gradient(black 20px, transparent 0); }
+  100% {   background-image: linear-gradient(black 20px, transparent 0), linear-gradient(black 20px, transparent 0), linear-gradient(black 20px, transparent 0), linear-gradient(#be0000 20px, transparent 0); }
+}
+.loader_container
+{
+  height: 100%;
+  width: 100%;
+  z-index: 201;
+  background: rgba(232, 232, 232, 0.4);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
+.loader_container p{
+  z-index: 201;
+  position: relative;
+  font-size: 22px;
+  text-shadow: 0 0 4px white;
+}
+.loader_border
+{
+  padding: 15px;
+  position: relative;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 900px) {
+  .loader_border
+  {
+    padding: 8px 10px;
+  }
+  .loader_container p{
+    font-size: 18px;
+  }
+}

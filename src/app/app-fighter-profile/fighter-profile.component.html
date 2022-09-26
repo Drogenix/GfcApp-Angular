@@ -1,225 +1,156 @@
-<div class="fighter_page_content_container">
-  <div class="fighter_page_header">
-    <div class="fighter_page_background"></div>
-    <div class="fighter_page_header_content">
-      <div class="header_fighter_info">
-        <p class="header_fighter_nickname">"{{fighter.nickname}}"</p>
-        <p class="header_fighter_name">{{fighter.name}}</p>
-        <p class="header_fighter_weight">{{fighter.weight}}</p>
-        <p class="header_fighter_results">{{fighter.win}}-{{fighter.lose}}-{{fighter.draw}} (В-П-Н)</p>
-        <div class="header_fighter_fights_stats">
-          <div class="header_fighter_winstreak">
-            <p class="indicator">{{fighter.winstreak}}</p>
-            <p class="indicator_name">ПОБЕДНАЯ СЕРИЯ</p>
-          </div>
-          <div class="header_fighter_wins_knokauts">
-            <p class="indicator">{{fighter.byknockout}}</p>
-            <p class="indicator_name">ПОБЕДЫ НОКАУТАМИ</p>
-          </div>
-          <div class="header_fighter_finishes_first">
-            <p class="indicator">{{fighter.firstRoundWins}}</p>
-            <p class="indicator_name">ФИНИШИ В ПЕРВОМ РАУНДЕ</p>
+<div class="container-fluid px-0 header_bg">
+  <div class="container-lg w-100 d-flex ps-0 ps-lg-3 pe-0 h-100">
+    <div class="row mt-auto w-100">
+      <div class="col-6 ps-4 ps-lg-0 mt-auto">
+        <div class="d-block">
+          <p class="header_fighter_nickname">"{{fighter.nickname}}"</p>
+          <p class="header_fighter_name">{{fighter.name}} {{fighter.secondName}}</p>
+          <p class="header_fighter_weight">{{fighter.weight}}</p>
+          <p class="header_fighter_results">{{fighter.win}}-{{fighter.lose}}-{{fighter.draw}} (В-П-Н)</p>
+          <div class="d-flex stats_row mt-3 mb-4">
+            <div class="stats_column">
+              <div class="d-flex flex-column align-items-center">
+                <p class="indicator">{{fighter.winstreak}}</p>
+                <div class="column_separator"></div>
+                <p class="indicator_name">ПОБЕДНАЯ СЕРИЯ</p>
+              </div>
+            </div>
+            <div class="stats_column sides_border">
+              <div class="d-flex flex-column align-items-center">
+                <p class="indicator">{{fighter.byknockout}}</p>
+                <div class="column_separator"></div>
+                <p class="indicator_name">ПОБЕДЫ НОКАУТАМИ</p>
+              </div>
+            </div>
+            <div class="stats_column">
+              <div class="d-flex flex-column align-items-center">
+                <p class="indicator">{{fighter.firstRoundWins}}</p>
+                <div class="column_separator"></div>
+                <p class="indicator_name">ФИНИШИ В ПЕРВОМ РАУНДЕ</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <img class="header_fighter_image" src="{{fighter.pictureUrl}}">
-      <div class="header_fighter_last_fight">
-        <div class="last_fight_tourn_info">
-          <p class="last_fight_title">ПОСЛЕДНИЙ БОЙ</p>
-          <img src="https://psv4.userapi.com/c237231/u666274465/docs/d21/0b9cded69570/izobrazhxudoinie_2022-08-15_185359919-removebg-preview.png?extra=0R5SZ8UL6MWVr_W4Ta4SAm5dLU6DLHAvW-Wvy_N-SPEyIeedsiBO015HX53RDdW8pftpyGAXeg6ISJbTTj0Xd-JfyQhrmrZ7IqeOlI6w-VKsgK99dC-ula5PEkg879SmKtgovvowS6VryhkrJVEm1-u5kg">
-        </div>
-        <div class="last_fight_results">
-          <div class="fighters_images">
-            <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2022-03/53d14884-959f-463a-81fd-28780ffbd102%252FMORENO_BRANDON_BELT_01-22.png?itok=cAB9rwhs">
-            <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-08/FIGUEIREDO_DEIVESON_BELT.png?VersionId=3MARG46ZiLrGOc7q5xbzDKx5PluAyfj2&itok=0TvjATuj">
-          </div>
-          <div class="last_fight_info">
-            <div class="fighters_info">
-              <p>ФИГЕРЕДО</p>
-              <p style="margin: 7px 10px 0 10px; font-size: 14px">VS</p>
-              <p>МОРЕНО</p>
-            </div>
-            <p class="last_fight_date">21.08.2022 </p>
-          </div>
-
+      <div class="col-6 pe-0">
+        <div class="d-flex justify-content-end h-100">
+          <img alt="none" class="img-fluid profile_img mt-auto" src="{{fighter.profilePictureUrl}}">
         </div>
       </div>
     </div>
   </div>
-  <div class="fighter-page__statistics">
-    <div class="statistics__content">
-      <h1 class="statistics_header">СТАТИСТИКА</h1>
-      <div class="statistics__main">
-        <div class="main__column">
-          <div class="column__content">
-            <div class="content__main">
-              <p>ТОЧНОСТЬ УДАРОВ</p>
-              <p style="color: #d20a0a">56%</p>
-            </div>
-            <div class="content__info">
-              <p>Нанесено акц. ударов</p>
-              <p class="info__value">497</p>
-            </div>
-            <div class="content__separator"></div>
-            <div class="content__info">
-              <p>Выброшено акц. ударов</p>
-              <p class="info__value">891</p>
-            </div>
-          </div>
-        </div>
-        <div class="main__column">
-          <div class="column__content">
-            <div class="content__main">
-              <p>УСПЕШНОСТЬ ТЕЙКДАУНОВ</p>
-              <p style="color: #d20a0a">42%</p>
-            </div>
-            <div class="content__info">
-              <p>Тейкдаунов выполнено</p>
-              <p class="info__value">7</p>
-            </div>
-            <div class="content__separator"></div>
-            <div class="content__info">
-              <p>Попыток текйдаунов</p>
-              <p class="info__value">36</p>
-            </div>
-          </div>
-        </div>
-        <div class="main__column">
-          <div class="column__content">
-            <div class="content__main">
-              <p>СПОСОБ ПОБЕДЫ</p>
-            </div>
-            <div class="content__info">
-              <p>KO/TKO</p>
-              <p style="color: black" class="info__value">9 (43%)</p>
-            </div>
-            <div class="content__separator"></div>
-            <div class="content__info">
-              <p>РЕШЕНИЕ</p>
-              <p style="color: black" class="info__value">4 (19%)</p>
-            </div>
-            <div class="content__separator"></div>
-            <div class="content__info">
-              <p>САМБИШЕН</p>
-              <p style="color: black" class="info__value">8 (38%)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="fighter-page__history">
-    <h1 class="history__header">ИСТОРИЯ ВЫСТУПЛЕНИЙ</h1>
-    <div class="history__list">
-      <div class="list__item">
-        <div class="item__images">
-          <p class="images__winner winner--right">ПОБЕДА</p>
-          <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2022-03/53d14884-959f-463a-81fd-28780ffbd102%252FMORENO_BRANDON_BELT_01-22.png?itok=cAB9rwhs"/>
-          <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-08/FIGUEIREDO_DEIVESON_BELT.png?VersionId=3MARG46ZiLrGOc7q5xbzDKx5PluAyfj2&itok=0TvjATuj"/>
-        </div>
-        <div class="item__info">
-          <p class="info__fighters">МОРЕНО VS ФИГЕРЕДО</p>
-          <p class="info__date">22.01.22</p>
-          <div class="info__result">
-            <div class="result__column">
-              <p class="result__title">Раунд</p>
-              <p class="result__end">5</p>
-            </div>
-            <div class="result__column">
-              <p class="result__title">Время</p>
-              <p class="result__end">5:00</p>
-            </div>
-            <div class="result__column">
-              <p class="result__title">Метод</p>
-              <p class="result__end">РЕШЕНИЕ</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div class="list__item">
-        <div class="item__images">
-          <p class="images__winner winner--right">ПОБЕДА</p>
-          <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2022-03/53d14884-959f-463a-81fd-28780ffbd102%252FMORENO_BRANDON_BELT_01-22.png?itok=cAB9rwhs"/>
-          <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-08/FIGUEIREDO_DEIVESON_BELT.png?VersionId=3MARG46ZiLrGOc7q5xbzDKx5PluAyfj2&itok=0TvjATuj"/>
-        </div>
-        <div class="item__info">
-          <p class="info__fighters">МОРЕНО VS ФИГЕРЕДО</p>
-          <p class="info__date">22.01.22</p>
-          <div class="info__result">
-            <div class="result__column">
-              <p class="result__title">Раунд</p>
-              <p class="result__end">5</p>
-            </div>
-            <div class="result__column">
-              <p class="result__title">Время</p>
-              <p class="result__end">5:00</p>
-            </div>
-            <div class="result__column">
-              <p class="result__title">Метод</p>
-              <p class="result__end">РЕШЕНИЕ</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div class="list__item">
-        <div class="item__images">
-          <p class="images__winner winner--right">ПОБЕДА</p>
-          <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2022-03/53d14884-959f-463a-81fd-28780ffbd102%252FMORENO_BRANDON_BELT_01-22.png?itok=cAB9rwhs"/>
-          <img src="https://dmxg5wxfqgb4u.cloudfront.net/styles/event_results_athlete_headshot/s3/2020-08/FIGUEIREDO_DEIVESON_BELT.png?VersionId=3MARG46ZiLrGOc7q5xbzDKx5PluAyfj2&itok=0TvjATuj"/>
-        </div>
-        <div class="item__info">
-          <p class="info__fighters">МОРЕНО VS ФИГЕРЕДО</p>
-          <p class="info__date">22.01.22</p>
-          <div class="info__result">
-            <div class="result__column">
-              <p class="result__title">Раунд</p>
-              <p class="result__end">5</p>
-            </div>
-            <div class="result__column">
-              <p class="result__title">Время</p>
-              <p class="result__end">5:00</p>
-            </div>
-            <div class="result__column">
-              <p class="result__title">Метод</p>
-              <p class="result__end">РЕШЕНИЕ</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <button class="history__more">ПОКАЗАТЬ БОЛЬШЕ</button>
-  </div>
-  <footer class="page_footer">
-    <div class="footer_content">
-      <div class="footer_brend">
-        <a href="#">
-          <svg class="brend_svg" fill="#d20a0a" width="100px" height="100px" viewBox="0 0 1675 580" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <g id="#d20a0aff">
-              <path opacity="1.00" d=" M 135.91 0.00 L 334.60 0.00 C 295.13 141.90 255.88 283.86 216.45 425.78 C 214.77 430.82 214.72 436.66 217.82 441.19 C 222.83 448.79 232.35 451.80 241.04 452.28 C 251.36 452.55 261.68 452.32 272.01 452.40 C 283.21 452.34 294.84 452.76 305.48 448.69 C 312.84 445.81 317.37 438.55 319.34 431.19 C 359.30 287.47 399.08 143.70 439.10 0.00 L 636.62 0.00 C 594.62 151.00 552.77 302.04 510.82 453.06 C 506.30 469.09 502.04 485.20 497.34 501.18 C 491.29 520.62 481.30 539.53 465.42 552.70 C 453.68 562.69 438.98 568.35 424.16 571.96 C 403.20 577.19 381.56 578.58 360.08 580.00 L 104.20 580.00 C 78.95 578.42 53.09 572.63 32.04 557.98 C 18.23 548.61 7.12 534.81 2.60 518.59 C 0.37 511.62 0.81 504.21 0.85 497.00 C 0.89 488.41 3.84 480.25 6.00 472.04 C 49.63 314.70 93.30 157.36 136.91 0.01 L 135.91 0.00 Z" />
-              <path opacity="1.00" d=" M 730.61 0.00 L 1157.59 0.00 C 1145.73 42.45 1134.02 84.95 1122.21 127.42 C 979.87 127.45 837.54 127.44 695.20 127.43 C 706.99 84.95 718.71 42.45 730.61 0.00 Z" />
-              <path opacity="1.00" d=" M 1350.38 0.00 L 1674.29 0.00 C 1669.62 19.27 1663.78 38.27 1658.65 57.43 C 1652.17 80.76 1645.69 104.09 1639.22 127.42 C 1569.14 127.44 1499.05 127.42 1428.97 127.43 C 1418.71 127.52 1408.04 127.43 1398.39 131.40 C 1390.53 134.72 1386.44 142.95 1384.45 150.80 C 1358.88 243.01 1333.28 335.23 1307.73 427.45 C 1305.87 433.18 1307.46 439.73 1311.73 443.97 C 1318.00 450.38 1327.37 452.39 1336.04 452.39 C 1412.37 452.41 1488.70 452.39 1565.03 452.41 C 1553.25 494.94 1541.44 537.47 1529.64 580.00 L 1205.22 580.00 C 1180.92 578.46 1156.12 573.09 1135.49 559.60 C 1121.95 550.94 1110.56 538.36 1105.11 523.09 C 1100.11 509.98 1100.53 495.37 1104.31 482.01 C 1140.98 349.87 1177.66 217.73 1214.35 85.59 C 1219.67 66.15 1228.16 46.98 1242.50 32.47 C 1251.97 22.76 1263.99 15.80 1276.82 11.56 C 1300.50 3.58 1325.61 1.64 1350.38 0.00 Z" />
-              <path opacity="1.00" d=" M 670.69 215.39 C 813.05 215.37 955.41 215.38 1097.77 215.39 C 1085.96 257.97 1074.14 300.54 1062.32 343.11 C 985.82 343.14 909.33 343.11 832.83 343.13 C 810.91 422.08 789.04 501.04 767.12 579.99 L 768.47 580.00 L 569.52 580.00 C 603.31 458.48 636.96 336.93 670.69 215.39 Z" />
-            </g>
-          </svg>
-        </a>
-      </div>
-      <div class="footer_links">
-        <div class="links">
-          <p class="links_title">КОНТАКТЫ</p>
-          <a href="#" class="footer_link">Сообщество ВК</a>
-          <a href="#" class="footer_link">Основатель GFC</a>
-          <a href="#" class="footer_link">Разработчик</a>
-          <a href="#" class="footer_link">Заявка на контракт</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer_copyrights">
-      <p class="copyrights">Copyright © 2022-2023 GFC | Никакие права не защищены, нам до избы.</p>
-    </div>
-  </footer>
 </div>
+<div class="container-fluid stats_container px-0">
+  <div class="container-lg py-4 mb-4">
+        <h1 class="header text-left text-white mb-3">СТАТИСТИКА</h1>
+        <div class="row px-2 px-lg-0 g-3">
+          <div class="col-12 col-sm-6 col-md-4 px-0">
+            <div class="d-block px-4 py-3 me-sm-3 mx-auto mx-sm-0 col-bg statistics_container ">
+                <div class="d-flex justify-content-between">
+                  <p class="cols-title">ТОЧНОСТЬ УДАРОВ</p>
+                  <p class="cols-percentage">{{(fighter.accurateHits/fighter.totalHits) * 100 | number:'1.0-0'}}%</p>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <p class="cols text-gray">Нанесено акц. ударов</p>
+                  <p class="cols fw-bolder">{{fighter.accurateHits}}</p>
+                </div>
+                <div class="stats_separator"></div>
+                <div class="d-flex align-items-center justify-content-between mt-1">
+                  <p class="cols text-gray">Выброшено акц. ударов</p>
+                  <p class="cols fw-bolder">{{fighter.totalHits}}</p>
+                </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 px-0">
+            <div class="d-block px-4 py-3 me-sm-3 mx-auto mx-sm-0 col-bg statistics_container">
+              <div class="d-block">
+                <div class="d-flex justify-content-between">
+                  <p class="cols-title">УСПЕШНОСТЬ ТЕЙКДАУНОВ</p>
+                  <p class="cols-percentage">{{(fighter.accurateTakedowns/fighter.totalTakedowns) * 100 | number:'1.0-0'}}%</p>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <p class="cols text-gray">Тейкдаунов выполнено</p>
+                  <p class="cols fw-bolder">{{fighter.accurateTakedowns}}</p>
+                </div>
+                <div class="stats_separator"></div>
+                <div class="d-flex align-items-center justify-content-between mt-1">
+                  <p class="cols text-gray">Попыток текйдаунов</p>
+                  <p class="cols fw-bolder">{{fighter.totalTakedowns}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 px-0">
+            <div class="d-block px-4 py-3 me-sm-3 h-100 mx-auto mx-sm-0 col-bg statistics_container">
+              <div class="d-block">
+                <div class="d-flex">
+                  <p class="cols-title ml-100">СПОСОБ ПОБЕДЫ</p>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <p class="cols text-gray">KO/TKO</p>
+                  <p class="cols fw-bolder">{{fighter.winByKoTko}}({{(fighter.winByKoTko / fighter.win) * 100 | number:'1.0-0'}}%)</p>
+                </div>
+                <div class="stats_separator"></div>
+                <div class="d-flex align-items-center justify-content-between mt-1">
+                  <p class="cols text-gray">РЕШЕНИЕ</p>
+                  <p class="cols fw-bolder">{{fighter.wInByDecision}}({{(fighter.wInByDecision / fighter.win)*100 | number:'1.0-0'}}%)</p>
+                </div>
+                <div class="stats_separator"></div>
+                <div class="d-flex align-items-center justify-content-between mt-1">
+                  <p class="cols text-gray">САМБИШЕН</p>
+                  <p class="cols fw-bolder">{{fighter.winBySubmission}}({{(fighter.winBySubmission / fighter.win)*100 | number:'1.0-0'}}%)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+</div>
+<div class="container-lg mt-3 px-0">
+  <div class="d-block px-3 px-lg-0">
+    <h1 class="header text-left">ИСТОРИЯ ВЫСТУПЛЕНИЙ</h1>
+    <div class="empty_container" *ngIf="fighterHistory.length <1; else list">
+      <h2>Здесь пока ничего нет...</h2>
+    </div>
+    <ng-template #list>
+    <div class="d-flex flex-column justify-content-center align-items-center mt-4">
+        <div class="row mb-3 px-3 py-3 item_container" *ngFor="let fight of fighterHistory">
+          <div class="col-12 col-sm-6">
+            <div class="d-flex h-100 justify-content-center justify-content-sm-start align-items-end">
+              <div class="d-block position-relative img_container">
+                <img alt="none" class="position-relative history_img img_left" src="{{fight.firstFighter.pictureUrl}}"/>
+                <img alt="none" class="position-absolute history_img img_right top-0" src="{{fight.secondFighter.pictureUrl}}"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 mt-auto">
+            <div class="d-flex justify-content-center justify-content-sm-end">
+              <div class="d-block py-2">
+                <p class="col_names m-0 fw-bolder">{{fight.firstFighter.secondName | uppercase}} VS {{fight.secondFighter.secondName | uppercase}}</p>
+                <p class="col_date">{{fight.date | date:'shortDate'}}</p>
+                <div class="col_result">
+                  <div class="result-col">
+                    <p class="result-title">Раунд</p>
+                    <p class="result-end">{{fight.round}}</p>
+                  </div>
+                  <div class="result-col">
+                    <p class="result-title">Метод</p>
+                    <p class="result-end">{{fight.winReason}}</p>
+                  </div>
+                  <div class="result-col">
+                    <p class="result-title">ПОБЕДА</p>
+                    <p class="result-end">{{fight.winnerNum == 1 ? fight.firstFighter.secondName : fight.secondFighter.secondName}}</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <button class="history_more">ПОКАЗАТЬ БОЛЬШЕ</button>
+    </div>
+    </ng-template>
+  </div>
+</div>
+<app-footer></app-footer>

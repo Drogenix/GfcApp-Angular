@@ -1,27 +1,15 @@
-.fighters_page_container
-{
-  position: relative;
-}
-.fighters_page_content
-{
-  margin: 150px 0 100px 0;
-}
-.fighters_page_content h1
-{
-  font-size: 50px;
-  text-align: center;
-}
-.fighters_nav_links
+.fighters_nav_link
 {
   display: flex;
   justify-content: center;
   color: gray;
   font-size: 18px;
-  height: 35px;
 }
-.fighters_nav_links a
+.fighters_nav_link
 {
   position: relative;
+  background: transparent;
+  border: 0;
   left: 0;
   display: flex;
   align-items: center;
@@ -31,11 +19,9 @@
   transition: 400ms ease-in;
   cursor: pointer;
   padding: 0 10px;
-  text-shadow: 0px 0px 4px rgba(100, 100, 100, 0.5);
-  border-top: 1px solid transparent;
 }
 
-.fighters_nav_links a:hover
+.fighters_nav_link:hover
 {
   left: 5px;
   color: #000000;
@@ -72,18 +58,13 @@
   background: black;
   color: white;
 }
-.fighters_list
-{
-  max-width: 1000px;
-  margin: 0px auto 0 auto;
-}
 .fighter_container
 {
   background: rgb(253, 253, 253);
   border-radius: 4px;
   padding: 25px;
-  box-shadow: 0px 4px 12px rgba(0, 9, 26, 0.2);
-  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0, 9, 26, 0.2);
+  margin-bottom: 25px;
   cursor: pointer;
   position: relative;
   transition: 200ms ease-out;
@@ -93,29 +74,14 @@
 {
   top:-5px;
 }
-.fighter_content
-{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.fighter_content img{
-  height: 160px;
-  width: 290px;
+
+.card-image-fluid{
+  max-height: 160px;
+  max-width: 100%;
   position: relative;
-  right: 0;
 }
-
-@media (max-width:900px){
-.fighter_content img
+.text-left
 {
-  right: 40px;
-}
-}
-
-.fighter_info
-{
-  height: 100%;
   text-align: left;
 }
 .fighter_nickname
@@ -163,56 +129,11 @@
   font-size: 15px;
   font-weight: bolder;
 }
-.fighter_link_button
-{
-  color: black;
-  position: relative;
-  font-size: 13.5px;
-  letter-spacing: 1px;
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0px 0px 3px #a8a7a7;
-  border-radius: 3px;
-  border: 2px solid transparent;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  width:120px;
-  left: 0;
-  transition: 400ms ease-in;
-  z-index: 3;
-}
-.fighter_link_button:before
-{
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 1px;
-  left: 0;
-  background: transparent;
-  transition: 400ms ease-in;
-  border-radius: 3px;
-
-  z-index: -2;
-}
-.fighter_link_button:hover
-{
-  left: 7px;
-  color: white;
-  border: 2px solid white;
-  box-shadow: 0px 0px 1px 2px rgb(0, 0, 0);
-}
-.fighter_link_button:hover:before
-{
-  background: rgb(38, 38, 38);
-  width: 100%;
-}
 .page_separator
 {
   margin-bottom: 30px;
   border-bottom: 1px solid #e3e3e3;
-  box-shadow: 0px 0px 12px #c5c5c5;
+  box-shadow: 0 0 12px #c5c5c5;
 }
 .rating
 {
@@ -221,4 +142,86 @@
   display: flex;
   margin: 0 0 5px 0;
 }
+.link_button:hover
+{
+  top:0;
+  left: 7px;
+}
+.w--100
+{
+  width: 100%;
+}
+.empty-list-container
+{
+  text-align: center;
+}
+.empty-list-container p
+{
+  color: #be0000;
 
+}
+@media screen and (min-width: 988px){
+  .container-md
+  {
+    max-width: 900px;
+  }
+}
+@media screen and (max-width: 766px)
+{
+  .fighter_nickname
+  {
+    font-size: 14px;
+  }
+  .fighter_name-smaller
+  {
+    font-size: 16px;
+  }
+  .rating
+  {
+    font-size: 16px;
+  }
+  .fighter_stats
+  {
+    font-size: 15px;
+  }
+  .card-image-fluid
+  {
+    max-height: 140px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .fighters_nav_link
+  {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 575px ) {
+  .header
+  {
+    font-size: 40px;
+  }
+  .b-bottom
+  {
+    border-bottom: 1px solid #00091A33;
+  }
+  .fighter_container
+  {
+    max-width: 376px;
+  }
+  .w--100
+  {
+    width: auto;
+  }
+  .link_button
+  {
+    height: 40px;
+    font-size: 12px;
+    max-width: 100px;
+  }
+}
+.champion
+{
+  color: gold;
+  letter-spacing: 2px;
+  font-size: 1rem;
+}

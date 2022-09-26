@@ -16,15 +16,17 @@ export interface Fight
 
   secondFighter: Fighter;
 
-  isComplete: number;
+  isComplete: boolean;
 
   winnerNum: number;
 
-  winReason: number;
+  winReason: string;
 
   firstEndRating: number;
 
   secondEndRating: number;
+
+  round:number;
 
   date: Date;
 }

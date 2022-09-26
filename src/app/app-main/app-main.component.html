@@ -1,15 +1,18 @@
-<div class="main_page_content_container">
-  <img class="main_page_background" src="https://wpapers.ru/wallpapers/Sport/9585/1920x1080_UFC.jpg">
-  <div class="background_shadow"></div>
+<div class="main_page_content_container px-3">
   <div class="main_page_content">
-    <p class="header_event_title">GFC 221</p>
-    <p style="font-size: 22px; margin: 0; letter-spacing: 1px">Возвращение Копибары Копибаровича, новое испытание для администраторов сервера, битва дрыщавых школьников, косящих под бойцов.</p>
-    <div class="main_page_timer_container">
+    <p class="main_header text-center spacing">GFC {{nearTournament.number}}</p>
+    <p class="main_title spacing">{{nearTournament.title}}</p>
+    <div class="d-flex align-items-center justify-content-center mt-4">
       <div class="maim_page_timer">
         <div class="main_page_timer_content">
-          <p style="margin: 0; font-size: 26px; color: white; text-shadow: 0px 0px 2px black; letter-spacing: 3px">TIME</p>
-          <p class="timer">24:00:00</p>
-          <a href="#" class="header_event_link">ПОЛНЫЙ КАРД</a>
+          <ng-container *ngIf="isTimerTick">
+            <div class="timer">
+              <p>TIME</p>
+              <p>{{hours | number:'2.0-0'}}:{{minutes | number:'2.0-0'}}:{{seconds | number:'2.0-0'}}</p>
+            </div>
+          </ng-container>
+            <p class="timer" *ngIf="isEventStarted">ТУРНИР НАЧАЛСЯ!</p>
+          <a routerLink="../tournaments/{{nearTournament.id}}" class="link_button mt-2 smaller">ПОЛНЫЙ КАРД</a>
         </div>
       </div>
     </div>

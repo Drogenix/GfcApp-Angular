@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from "../services/api.service";
 import {Fighter} from "../models/fighter";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-app-fighters',
@@ -11,11 +11,47 @@ export class AppFightersComponent implements OnInit{
 
   fighters: Fighter[]= [];
 
-  constructor(private apiService:ApiService) {}
+  displayingFighters: Fighter[] = []
+
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit()
   {
-    this.apiService.getFighters().subscribe(response => this.fighters = response.body);
+     this.activatedRoute.data.subscribe(({data})=> {
+       this.fighters = data;
+
+       this.displayingFighters = this.fighters;
+     });
+  }
+
+  getLightweight()
+  {
+    this.displayingFighters = this.fighters.filter(fighter=> fighter.weight == 'Lightweight')
+    this.sortByRating();
+  }
+  getWelterweight()
+  {
+    this.displayingFighters = this.fighters.filter(fighter=> fighter.weight == 'Welterweight')
+    this.sortByRating();
+  }
+  getFeatherweight()
+  {
+    this.displayingFighters = this.fighters.filter(fighter=> fighter.weight == 'Featherweight')
+    this.sortByRating();
+  }
+
+  private sortByRating()
+  {
+    this.displayingFighters.sort((x,y) => {
+      if (x.rating > y.rating) {
+        return 1;
+      }
+
+      if (x.rating < y.rating) {
+        return -1;
+      }
+      return 0;
+    });
   }
 
 }

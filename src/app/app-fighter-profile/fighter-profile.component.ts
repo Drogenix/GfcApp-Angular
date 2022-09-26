@@ -1,8 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {Fighter} from "../models/fighter";
-import {ApiService} from "../services/api.service";
-import {retry} from "rxjs";
+import {Fight} from "../models/fight";
 
 @Component({
   selector: 'app-app-fighter-profile',
@@ -11,18 +10,18 @@ import {retry} from "rxjs";
 })
 export class AppFighterProfileComponent {
 
-  id: number;
-  private sub: any;
   fighter: Fighter;
 
-  constructor(private route:ActivatedRoute, private apiService: ApiService)
+  fighterHistory: Fight[] = [];
+
+  constructor(private route:ActivatedRoute)
   {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];}); // (+) converts string 'id' to a number
-
-    this.apiService.getFighterById(this.id).subscribe(response=> this.fighter = response.body);
-
+    this.route.data.subscribe(({data})=> this.fighter = data);
+    this.route.data.subscribe(({history})=>
+    {
+      if(history != null)
+      this.fighterHistory = history
+    });
   }
-
 
 }

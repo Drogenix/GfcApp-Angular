@@ -4,27 +4,13 @@
 }
 .news_page_header
 {
-  height: 98vh;
+  height: clamp(52vh, 55vw + 55px, 100vh);
   display: flex;
   flex-direction: column;
-
-}
-.news_page_background
-{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: -2;
-}
-.news_page_header_content
-{
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: auto auto 0 auto;
-  width: 1300px;
-  z-index: 2;
-  max-width: 1300px;
+  position: relative;
+  background-image: url("https://dmxg5wxfqgb4u.cloudfront.net/styles/background_image_xl/s3/2021-11/11062021-Kamaru-Usman-UFC-268-GettyImages-1351779341.jpg?h=e5aec6c8&itok=6cLyNI4V");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .header_news_category
 {
@@ -53,7 +39,7 @@
 .header_separator
 {
   border-bottom: 1px solid #cecece;
-  box-shadow: 0px 0px 12px #ffffff;
+  box-shadow: 0 0 12px #ffffff;
 }
 .header_publish_date
 {
@@ -82,7 +68,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-  box-shadow: 0px 0px 8px #b2b2b2;
+  box-shadow: 0 0 8px #b2b2b2;
 }
 .news_page_link_button
 {
@@ -103,13 +89,13 @@
   transition: 400ms ease-in;
   text-decoration: none;
   z-index: 3;
-  box-shadow: 0px 0px 4px 2px transparent;
+  box-shadow: 0 0 4px 2px transparent;
 }
 .news_page_link_button:hover
 {
   color: white;
   border: 2px solid white;
-  box-shadow: 0px 0px 3px 2px #270044;
+  box-shadow: 0 0 3px 2px #270044;
   top:-5px;
 }
 .news_page_link_button:before
@@ -129,4 +115,48 @@
   height: 100%;
   background: #464646;
 }
+.main_info
+{
+  font-size: 24px;
+  letter-spacing: 1px;
+  max-width: 768px;
+}
+@media screen and (min-width: 1400px){
+  .container-lg
+  {
+    max-width: 1140px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .header_news_title
+  {
+    font-size: 55px;
+    line-height: 65px;
+  }
+}
+@media screen and (max-width: 767px){
+  .header_news_title
+  {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .header_news_title
+  {
+    margin: 30px 0 0;
+  }
+  .main_info
+  {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 990px){
 
+}
+@media screen and (max-width: 576px) {
+  .header_news_title
+  {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+}

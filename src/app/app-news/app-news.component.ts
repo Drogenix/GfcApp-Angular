@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {Blog} from "../models/blog";
 
 @Component({
   selector: 'app-news',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppNewsComponent implements OnInit {
 
-  constructor() { }
+  news:Blog[]
+
+  constructor(private router:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.router.data.subscribe(({data})=>this.news = data);
   }
 
 }

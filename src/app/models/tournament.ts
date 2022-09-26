@@ -4,13 +4,17 @@ export interface Tournament
 {
   id: number;
 
-  date: Date;
+  number: number;
+
+  startDate: Date;
 
   place: string;
 
   fights: Fight[];
 
-  isComplete: number;
+  isComplete: boolean;
 
   pictureUrl: string;
+
+  title:string;
 }

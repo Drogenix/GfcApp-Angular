@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from "../services/api.service";
 import {ActivatedRoute} from "@angular/router";
 import {Fight} from "../models/fight";
 import {Tournament} from "../models/tournament";
-import {ViewportScroller} from "@angular/common";
 
 @Component({
   selector: 'app-app-full-card',
@@ -12,28 +10,21 @@ import {ViewportScroller} from "@angular/common";
 })
 export class AppFullCardComponent implements OnInit {
 
-  id:number;
-
   tournament: Tournament;
 
-  mainCard: Fight[];
+  mainCard: Fight[] = [];
 
-  prelimCard:Fight[];
+  prelimCard:Fight[]= [];
 
-  earlyCard:Fight[];
+  earlyCard:Fight[]= [];
 
-  private sub:any;
-
-  constructor(private apiService:ApiService, private route: ActivatedRoute, private scroll: ViewportScroller) { }
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void
   {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];}); // (+) converts string 'id' to a number
+    this.router.data.subscribe(({data})=> {
 
-    this.apiService.getTournamentById(this.id).subscribe(response=> {
-
-      this.tournament = response.body
+      this.tournament = data;
 
       const fights = this.tournament.fights;
 
@@ -44,6 +35,16 @@ export class AppFullCardComponent implements OnInit {
       this.earlyCard = fights.filter(fight => fight.card == 'Early');
     });
 
+  }
+
+  scrollToElement(id:string)
+  {
+    // @ts-ignore
+    document.getElementById(id).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
   }
 
 }

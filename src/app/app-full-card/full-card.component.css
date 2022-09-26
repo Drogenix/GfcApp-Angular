@@ -14,6 +14,9 @@
   margin-bottom: 15px;
 }
 .card_link{
+  display: flex;
+  justify-content: center;
+  text-align: center;
   font-size: 20px;
   letter-spacing: 2px;
   font-weight: bolder;
@@ -33,19 +36,7 @@
 }
 .separator
 {
-  margin-top: 25px;
-  border-bottom: 1px solid #919191;
-  box-shadow: 0px 0px 12px #9f9f9f;
-}
-.event_card
-{
-  max-width: 1200px;
-  margin: 20px auto 0 auto;
-  padding: 0 20px;
-}
-.card_title
-{
-  text-align: center;
+  border-bottom: 1px solid lightgrey;
 }
 .card_title h1
 {
@@ -55,12 +46,8 @@
 }
 .card_fight-border
 {
-  box-shadow: 0px 2px 18px #cecece;
+  box-shadow: 0 2px 18px #cecece;
   border-radius: 5px;
-}
-.height-200
-{
-  min-height: 160px;
 }
 .card_fighter_picture
 {
@@ -96,14 +83,15 @@
   color: white;
   padding: 2px 12px;
   margin: 0;
+  max-width: 35px;
 }
 .card_fighter_name
 {
   font-weight: bolder;
-  font-size: 26px;
-  min-height: 70px;
+  font-size: 23px;
   margin: 0;
   word-wrap: break-word;
+  text-align: start;
 }
 .fight_info
 {
@@ -124,6 +112,7 @@
 .bottom_border
 {
   border-top: 1px solid #d1d1d1;
+  min-height: 40px;
 }
 .fighter_country
 {
@@ -139,6 +128,10 @@
   font-size: 18px;
   color: gray;
 }
+.versus
+{
+  color: black; font-weight: bolder;font-size: 22px;
+}
 .fight_chances p
 {
   margin: 0;
@@ -147,8 +140,136 @@
 {
   text-align: right;
 }
-.img-fixed
+.fight_img
 {
-  max-height: 149px;
-  max-width: 264px;
+  height: auto;
+  max-width: 100%;
+}
+.header
+{
+  font-size: 50px;
+}
+.fight_results
+{
+  font-size: 16px;
+  margin: 0 5px;
+}
+@media screen and (min-width: 1400px){
+  .container-lg
+  {
+    max-width: 1140px;
+  }
+}
+@media screen and (max-width: 992px){
+  .card_fighter_name
+  {
+    font-size: 2.6vw;
+  }
+  .fight_info
+  {
+    font-size: 2vw;
+  }
+  .fight_img
+  {
+    min-width: 220px;
+  }
+}
+@media screen and (max-width: 767px){
+  .card_fighter_name
+  {
+    font-size: 16px;
+  }
+  .fight_info
+  {
+    font-size: 14px;
+  }
+  .fighter_rating
+  {
+    font-size: 15px;
+  }
+  .versus
+  {
+    font-size: 14px;
+  }
+  .champion
+  {
+    font-size: 14px;
+    padding: 1px 8px;
+    max-width: 23px;
+  }
+  .fighter_country
+  {
+    font-size: 14px;
+
+  }
+  .fighter_country p
+  {
+    margin: auto 4px auto 0;
+  }
+  .fighter_country img
+  {
+    height: 35px;
+    width: 35px;
+  }
+  .fight_img
+  {
+    margin-top: 20px;
+    min-width: 180px;
+  }
+  .header
+  {
+    font-size: 35px;
+  }
+  .card_img
+  {
+    height: 45px;
+    width: 65px;
+  }
+}
+@media screen and (max-width: 576px){
+  .fight_img
+  {
+    max-width: 220px;
+  }
+  .card_fighter_name
+     {
+       font-size: 18px;
+     }
+  .fight_info
+  {
+    font-size: 16px;
+  }
+  .fighter_rating
+  {
+    font-size: 17px;
+  }
+  .versus
+  {
+    font-size: 18px;
+  }
+  .fighter_country
+  {
+    font-size: 14px;
+
+  }
+  .fighter_country p
+  {
+    margin: auto 4px auto 0;
+  }
+  .b-bottom
+  {
+    border-bottom: 1px solid lightgrey;
+  }
+  .b-top
+  {
+    border-top: 1px solid lightgrey;
+  }
+  .card_link
+  {
+    font-size: 13px;
+  }
+}
+.container-fluid
+{
+  min-height: 100%;
 }
