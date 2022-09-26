@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppNewsComponent } from './app-news/app-news.component';
@@ -12,7 +12,10 @@ import { AppFightersComponent } from './app-fighters/fighters.component';
 import {AppNewsPageComponent} from './app-news/app-news-page/news-page.component';
 import {AppFighterProfileComponent} from './app-fighter-profile/fighter-profile.component';
 import {ApiService} from "./services/api.service";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
+import {ErrorPageComponent } from './app-error/error-page.component';
+import { AppSpinnerComponent } from './app-spinner/app-spinner.component';
+import { AppFooterComponent } from './app-footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     AppFullCardComponent,
     AppFightersComponent,
     AppNewsPageComponent,
-    AppFighterProfileComponent
+    AppFighterProfileComponent,
+    ErrorPageComponent,
+    AppSpinnerComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,

@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gfc": {
+    "Gfc": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -29,8 +25,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts":
-            []
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -69,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gfc:build:production"
+              "browserTarget": "Gfc:build:production"
             },
             "development": {
-              "browserTarget": "gfc:build:development"
+              "browserTarget": "Gfc:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gfc:build"
+            "browserTarget": "Gfc:build"
           }
         },
         "test": {
@@ -102,6 +97,5 @@
         }
       }
     }
-  },
-  "defaultProject": "gfc"
+  }
 }
