@@ -1,12 +1,7 @@
 import {
-  AfterContentChecked,
-  AfterViewChecked,
-  AfterViewInit,
-  Component, DoCheck,
+  Component,
   ElementRef,
-  OnInit,
-  Renderer2,
-  ViewChild
+  Renderer2
 } from '@angular/core';
 import {animate, group, keyframes, query, style, transition, trigger} from "@angular/animations";
 import {
@@ -17,7 +12,6 @@ import {
   NavigationStart,
   Router
 } from "@angular/router";
-import {ApiService} from "../../../Gfc/src/app/services/api.service";
 
 @Component({
   selector: 'app-root',
@@ -78,8 +72,7 @@ export class AppComponent{
 
   constructor(private contexts: ChildrenOutletContexts,
               private renderer:Renderer2,
-              private parent:ElementRef,
-              private apiService:ApiService,private router: Router)
+              private parent:ElementRef, private router: Router)
   {
       this.router.events.subscribe(event =>
       {
