@@ -305,6 +305,10 @@ display: flex; justify-content: center; font-size: 16px; color: white;
   max-height: 200px;
   height: 100%;
 }
+.maxw-360
+{
+  max-width: 260px;
+}
 .cols-title
 {
   font-size: clamp(1.5rem, 2vw ,2.25rem);
