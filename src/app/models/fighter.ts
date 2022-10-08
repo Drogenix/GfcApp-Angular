@@ -16,7 +16,7 @@ export interface Fighter
 
   rating: number;
 
-  pfprating: number;
+  pfpRating: number;
 
   statisticId: number;
 
