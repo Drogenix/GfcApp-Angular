@@ -2,11 +2,12 @@
   <h1 class="header mt-4">РЕЙТИНГ БОЙЦОВ</h1>
     <div class="container px-3 px-lg-2 mt-4">
       <div class="row">
-        <div *ngIf="pfpRating.length >2" class="col-4">
+        <div *ngIf="pfpRating.length >2" class="col-md-6 col-lg-4 mb-4">
+          <div class="d-flex justify-content-center">          
           <div class="weight">
             <div class="top_fighter_info">
               <p class="weight_title">ВНЕ ЗАВИСИМОСТИ ОТ КАТЕГОРИЙ</p>
-              <p class="top_rank">TOP RANK</p>
+              <p class="champion">TOP RANK</p>
               <a routerLink="../fighters/{{pfpRating[0].id}}" class="fighter_name">{{pfpRating[0].name}}<br>{{pfpRating[0].secondName}}</a>
               <div class="img_container">
                 <img alt="none" class="fighter_img" src="https://i.imgur.com/TYUMnmj.png"/>
@@ -15,12 +16,13 @@
             <div class="horizontal_separator"></div>
             <div class="weight_fighters_top">
               <a routerLink="../fighters/{{fighter.id}}" class="fighter_field" *ngFor="let fighter of pfpRating.slice(1,pfpRating.length)">
-                <p class="rating_number">{{fighter.rating}}</p>
+                <p class="rating_number">{{fighter.pfpRating}}</p>
                 <p class="fighter_field_name">{{fighter.name}} {{fighter.secondName}}</p>
               </a>
             </div>
           </div>
         </div>
+       </div>   
         <div *ngIf="welterweightRating.length >=2" class="col-md-6 px-0 col-lg-4 mb-4">
           <div class="d-flex justify-content-center">
             <div class="weight">
@@ -42,7 +44,7 @@
             </div>
           </div>
         </div>
-        <div *ngIf="lightweightRating.length >=2" class="col-md-6 col-lg-4  mb-4">
+        <div *ngIf="lightweightRating.length >=2" class="col-md-6 col-lg-4 mb-4">
           <div class="d-flex justify-content-center">
             <div class="weight">
               <div class="top_fighter_info">
@@ -63,7 +65,8 @@
             </div>
           </div>
         </div>
-        <div *ngIf="featherweightRating.length >= 2" class="col-4">
+        <div *ngIf="featherweightRating.length >= 2" class="col-md-6 col-lg-4 mb-4">
+          <div class="d-flex justify-content-center">
           <div class="weight">
             <div class="top_fighter_info">
               <p class="weight_title">ПОЛУЛЁГКИЙ ВЕС</p>
@@ -80,6 +83,7 @@
                 <p class="fighter_field_name">{{fighter.name}} {{fighter.secondName}}</p>
               </a>
             </div>
+          </div>
           </div>
         </div>
       </div>
