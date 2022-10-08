@@ -89,7 +89,7 @@ export class ApiService{
 
   getBlogById(id:number):Observable<Blog>
   {
-    const url = this._apiUrl + 'blogs'+ id;
+    const url = this._apiUrl + 'blogs/'+ id;
 
     return this.httpClient.get<Blog>(url).pipe(retry(25),catchError(this.handleRequestError))
   }
