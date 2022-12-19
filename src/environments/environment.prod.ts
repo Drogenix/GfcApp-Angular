@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://alalala.online/api/'
+  apiUrl: 'https://alalala.online/gfc/api/'
 };
