@@ -133,18 +133,16 @@
             </div>
           </div>
         </ng-container>
-        <ng-container *ngIf="earlyCard.length >0">
+        <ng-container *ngIf="prelimCard.length > 0">
           <div id="early" class="mt-3 text-center">
             <h1 class="header">РАННИЙ ПРЕЛИМ</h1>
-          </div>
-          <div class="card_fight-border pt-3 mb-4" *ngFor="let fight of earlyCard">
-            <div class="row mx-2 mx-sm-4">
-              <div class="col-7 col-sm-3 px-0 d-flex justify-content-center align-items-end">
-                <img alt="none" class="fight_img" src="{{fight.firstFighter.pictureUrl}}">
-              </div>
-              <div class="col-5 col-sm-2 px-0">
-                <div class="d-flex h-100">
-                  <div class="my-auto mt-sm-0">
+            <div class="card_fight-border pt-3 mb-4" *ngFor="let fight of earlyCard">
+              <div class="row mx-2 mx-sm-4">
+                <div class="col-7 col-sm-3 px-0 d-flex justify-content-center align-items-end">
+                  <img alt="none" class="fight_img" src="{{fight.firstFighter.pictureUrl}}">
+                </div>
+                <div class="col-5 col-sm-2 d-flex align-items-center align-items-sm-start px-0">
+                  <div class="d-block">
                     <p *ngIf="fight.firstFighter.rating == 1; else rating" class="champion">C</p>
                     <ng-template #rating>
                       <p class="fighter_rating">#{{fight.firstFighter.rating}}</p>
@@ -156,39 +154,46 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-12 col-sm-2 px-0 b-bottom b-top">
-                <div class="fight_info d-flex align-items-center justify-content-center">
+                <div class="col-12 col-sm-2 px-0 b-bottom b-top">
+                  <div class="fight_info d-flex align-items-center justify-content-center">
+                    <div class="d-block">
+                      <p class="fight_category">{{fight.firstFighter.weight}}</p>
+                      <p *ngIf="fight.isTitleFight == 1" class="champion_fight">ТИТУЛЬНЫЙ БОЙ</p>
+                      <p class="mt-4 versus" >VS</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-5 col-sm-2 d-flex justify-content-end align-items-center align-items-sm-start px-0">
                   <div class="d-block">
-                    <p class="fight_category">{{fight.firstFighter.weight}}</p>
-                    <p *ngIf="fight.isTitleFight == 1" class="champion_fight">ТИТУЛЬНЫЙ БОЙ</p>
-                    <p class="mt-4 versus" >VS</p>
+                    <div class="d-flex justify-content-end align-items-center">
+                      <ng-container *ngIf="fight.secondFighter.rating !=1; else champion">
+                        <p class="fighter_rating">#{{fight.secondFighter.rating}}</p>
+                      </ng-container>
+                      <ng-template #champion>
+                        <p class="champion">C</p>
+                      </ng-template>
+                    </div>
+                    <p class="card_fighter_name text-right">{{fight.secondFighter.name}} {{fight.secondFighter.secondName}}</p>
+                    <div class="fighter_country d-flex justify-content-end align-items-end">
+                      <p>{{fight.firstFighter.country}}</p>
+                      <img alt="none" height="50px" width="50px" src="https://ufc.ru/themes/custom/ufc/assets/img/flags/US.PNG">
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-5 col-sm-2 d-flex my-auto my-sm-0 px-0">
-                              <div class="d-block">
-                <div class="d-flex justify-content-end align-items-center">
-                  <p *ngIf="fight.secondFighter.rating == 1; else rating" class="champion">C</p>
-                  <ng-template #rating>
-                    <p class="fighter_rating">#{{fight.secondFighter.rating}}</p>
-                  </ng-template>
-                </div>
-                <p class="card_fighter_name text-right">{{fight.secondFighter.name}} {{fight.secondFighter.secondName}}</p>
-                <div class="fighter_country d-flex justify-content-end align-items-end">
-                  <p>{{fight.secondFighter.country}}</p>
-                  <img alt="none" height="50px" width="50px" src="https://ufc.ru/themes/custom/ufc/assets/img/flags/US.PNG">
+                <div class="col-7 col-sm-3 px-0 d-flex justify-content-center align-items-end">
+                  <img alt="none"  class="fight_img" src="{{fight.secondFighter.pictureUrl}}">
                 </div>
               </div>
-            <div class="bottom_border pt-5">
-              <ng-container *ngIf="tournament.isComplete">
-                <div class="d-flex justify-content-center align-items-center">
-                  <div class="d-flex fight_results">
-                    <p class="me-3">ПОБЕДА: {{(fight.winnerNum == 1 ? fight.firstFighter.secondName : fight.secondFighter.secondName) | uppercase}}</p>
-                    <p>ПРИЧИНА: {{fight.winReason | uppercase}}</p>
+              <div class="bottom_border">
+                <ng-container *ngIf="tournament.isComplete">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <div class="d-flex fight_results">
+                      <p class="me-3">ПОБЕДА: {{(fight.winnerNum == 1 ? fight.firstFighter.secondName : fight.secondFighter.secondName) | uppercase}}</p>
+                      <p>ПРИЧИНА: {{fight.winReason | uppercase}}</p>
+                    </div>
                   </div>
-                </div>
-              </ng-container>
+                </ng-container>
+              </div>
             </div>
           </div>
         </ng-container>
