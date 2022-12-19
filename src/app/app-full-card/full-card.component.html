@@ -167,6 +167,7 @@
                 </div>
               </div>
               <div class="col-5 col-sm-2 d-flex my-auto my-sm-0 px-0">
+                              <div class="d-block">
                 <div class="d-flex justify-content-end align-items-center">
                   <p *ngIf="fight.secondFighter.rating == 1; else rating" class="champion">C</p>
                   <ng-template #rating>
@@ -179,10 +180,6 @@
                   <img alt="none" height="50px" width="50px" src="https://ufc.ru/themes/custom/ufc/assets/img/flags/US.PNG">
                 </div>
               </div>
-              <div class="col-7 col-sm-3 px-0 d-flex justify-content-center align-items-end">
-                <img alt="none"  class="fight_img" src="{{fight.secondFighter.pictureUrl}}">
-              </div>
-            </div>
             <div class="bottom_border pt-5">
               <ng-container *ngIf="tournament.isComplete">
                 <div class="d-flex justify-content-center align-items-center">
